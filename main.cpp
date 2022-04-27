@@ -12,7 +12,7 @@ int main(){
 
   Sender jan;
   Receiver anna;
-  std::string message = "chuj-dupa-cipa-kupa-chuj-aaa";
+  std::string message = "abcd-efgh-ijkl-mnop-qrs";
   Package tmp_pack;
 
   std::cout << "Wiadomosc: " << message << std::endl << std::endl;
