@@ -22,10 +22,12 @@ void Sender::DivideMessage(std::string Message){
     }
 }
 
+
 Sender::Sender(){
     Messages = Queue();
     Size = 0;
 }
+
 
 Package Sender::TakeRandomPackage(){
 
@@ -50,6 +52,7 @@ Package Sender::TakeRandomPackage(){
     return tmp;
 
 }
+
 
 bool Sender::SendMessage(Receiver *receiver){
 

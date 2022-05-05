@@ -36,12 +36,41 @@ void Queue::InsertSort(Package new_pack){
   ptr->Next = tmp;
 }
 
+
 void Queue::InsertFront(Package new_pack){
 
   Node *tmp = new Node(new_pack);
 
   tmp->Next = Head;
   Head = tmp;
+}
+
+
+Package Queue::RemoveMin(){
+
+  if(!Head){
+    throw std::runtime_error("Proba usuniecia elementu z pustej kolejki!");
+  }
+
+  Node *ptr = Head;
+  Package min = ptr->Elem;
+  Head = Head->Next;
+  delete ptr;
+  return min;
+}
+
+
+void Queue::Delete(){
+
+  Node *ptr = Head;
+  Node *next;
+  Head = NULL;
+
+  while(ptr != NULL){
+    next = ptr->Next;
+    free(ptr);
+    ptr = next;
+  }
 }
 
 
@@ -59,30 +88,4 @@ std::ostream &operator << (std::ostream &out, Queue const &queue){
   }
   out << tmp->GetElem(); 
   return out;
-}
-
-Package Queue::RemoveMin(){
-
-  if(!Head){
-    throw "Proba usuniecia elementu z pustej kolejki!";
-  }
-
-  Node *ptr = Head;
-  Package min = ptr->Elem;
-  Head = Head->Next;
-  delete ptr;
-  return min;
-}
-
-void Queue::Delete(){
-
-  Node *ptr = Head;
-  Node *next;
-  Head = NULL;
-
-  while(ptr != NULL){
-    next = ptr->Next;
-    free(ptr);
-    ptr = next;
-  }
 }

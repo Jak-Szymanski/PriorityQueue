@@ -1,5 +1,6 @@
 #include "../inc/receiver.h"
 
+
 std::string Receiver::RestoreMessage(){
     std::string message = "";
 
@@ -14,6 +15,7 @@ std::string Receiver::RestoreMessage(){
     return message;
 
 }
+
 
 std::ostream &operator << (std::ostream &out, Receiver const &receiver){
 
